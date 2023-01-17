@@ -1,0 +1,12 @@
+.logoImage {
+  height: 20px;
+  width: 38px;
+  padding-right: 2px;
+}
+
+.logoText {
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.1rem;
+}
