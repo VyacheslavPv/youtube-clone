@@ -7,6 +7,11 @@ import { categories } from '../utils/constants';
 // import { css } from '@emotion/react/macro';
 import styled from '@emotion/styled/macro';
 
+interface SidebarProps {
+  selectedCategory: string;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>;
+}
+
 /* Styled components */
 
 const CategoryName = styled.span`
@@ -39,9 +44,10 @@ const CategoryBtn = styled.button<{ selected?: boolean }>`
   }
 `;
 
-const selectedCategory = 'New';
-
-const Sidebar = () => (
+const Sidebar: React.FC<SidebarProps> = ({
+  selectedCategory,
+  setSelectedCategory,
+}) => (
   <Stack
     direction="row"
     sx={{
@@ -52,7 +58,9 @@ const Sidebar = () => (
     {categories.map((category) => (
       <CategoryBtn
         selected={category.name === selectedCategory}
-        onClick={() => {}}
+        onClick={() => {
+          setSelectedCategory(category.name);
+        }}
         key={category.name}>
         <span style={{ marginRight: '24px' }}>{category.icon}</span>
         <CategoryName>{category.name}</CategoryName>
