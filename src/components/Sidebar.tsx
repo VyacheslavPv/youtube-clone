@@ -53,7 +53,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     sx={{
       overflowY: 'auto',
       height: { sm: 'auto', md: '95%' },
-      flexDirection: { md: 'column' },
+      flexDirection: { xs: 'column', sm: 'column', md: 'column' },
     }}>
     {categories.map((category) => (
       <CategoryBtn
