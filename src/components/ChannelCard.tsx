@@ -25,7 +25,7 @@ const ChannelCard: React.FC<ChannelCardProps> = ({
         margin: 'auto',
         marginTop,
       }}>
-      <Link to={`channel/${channelDetail?.id.channelId}`}>
+      <Link to={`/channel/${channelDetail?.id.channelId}`}>
         <CardContent
           sx={{
             display: 'flex',
