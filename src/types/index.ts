@@ -8,3 +8,7 @@ export interface SearchItem {
   };
   statistics: { subscriberCount: string };
 }
+
+export interface IVideoDetail extends SearchItem {
+  statistics: { subscriberCount: string; viewCount: string; likeCount: string };
+}

@@ -5,12 +5,18 @@ import { SearchItem } from '../types';
 
 interface SearchItemsProps {
   videos: SearchItem[];
+  direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
 }
 
-const SearchItems: React.FC<SearchItemsProps> = ({ videos }) => {
+const SearchItems: React.FC<SearchItemsProps> = ({ videos, direction }) => {
   console.log(videos);
+  if (!videos?.length) return <div>Loader</div>;
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+    <Stack
+      direction={direction || 'row'}
+      flexWrap="wrap"
+      justifyContent="start"
+      gap={2}>
       {videos.map((item, index) =>
         item.id.videoId ? (
           <Box key={index}>
